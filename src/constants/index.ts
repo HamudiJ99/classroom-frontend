@@ -1,38 +1,69 @@
-export const DEPARTMENTS =
-    ['CS',
-        'Math',
-        'English'
-    ];
+import { GraduationCap, School } from "lucide-react";
 
+export const USER_ROLES = {
+    STUDENT: "student",
+    TEACHER: "teacher",
+    ADMIN: "admin",
+};
+
+export const ROLE_OPTIONS = [
+    {
+        value: USER_ROLES.STUDENT,
+        label: "Student",
+        icon: GraduationCap,
+    },
+    {
+        value: USER_ROLES.TEACHER,
+        label: "Teacher",
+        icon: School,
+    },
+];
+
+export const DEPARTMENTS = [
+    "Computer Science",
+    "Mathematics",
+    "Physics",
+    "Chemistry",
+    "Biology",
+    "English",
+    "History",
+    "Geography",
+    "Economics",
+    "Business Administration",
+    "Engineering",
+    "Psychology",
+    "Sociology",
+    "Political Science",
+    "Philosophy",
+    "Education",
+    "Fine Arts",
+    "Music",
+    "Physical Education",
+    "Law",
+] as const;
 
 export const DEPARTMENT_OPTIONS = DEPARTMENTS.map((dept) => ({
     value: dept,
     label: dept,
 }));
 
-export const MOCK_SUBJECTS = [
-    {
-        id: 1,
-        code: "CS101",
-        name: "Intro to Computer Science",
-        department: "CS",
-        description: "A foundational course in computer science concepts and programming.",
-        createdAt: "2024-03-01T10:00:00Z"
-    },
-    {
-        id: 2,
-        code: "MATH201",
-        name: "Calculus II",
-        department: "Math",
-        description: "Further exploration of integral calculus and its applications.",
-        createdAt: "2024-03-02T10:00:00Z"
-    },
-    {
-        id: 3,
-        code: "ENG301",
-        name: "Academic Writing",
-        department: "English",
-        description: "Developing advanced writing skills for academic research and professional communication.",
-        createdAt: "2024-03-03T10:00:00Z"
-    }
+export const MAX_FILE_SIZE = 3 * 1024 * 1024; // 3MB in bytes
+export const ALLOWED_TYPES = [
+    "image/png",
+    "image/jpeg",
+    "image/jpg",
+    "image/webp",
 ];
+
+export const CLOUDINARY_UPLOAD_URL = import.meta.env.VITE_CLOUDINARY_UPLOAD_URL;
+export const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+export const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_BASE_URL;
+
+export const BASE_URL = import.meta.env.VITE_API_URL;
+export const ACCESS_TOKEN_KEY = import.meta.env.VITE_ACCESS_TOKEN_KEY;
+export const REFRESH_TOKEN_KEY = import.meta.env.VITE_REFRESH_TOKEN_KEY;
+
+export const REFRESH_TOKEN_URL = `${BASE_URL}/refresh-token`;
+
+export const CLOUDINARY_UPLOAD_PRESET = import.meta.env
+    .VITE_CLOUDINARY_UPLOAD_PRESET;
