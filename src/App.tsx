@@ -12,14 +12,18 @@ import { Toaster } from "./components/refine-ui/notification/toaster";
 import { useNotificationProvider } from "./components/refine-ui/notification/use-notification-provider";
 import { ThemeProvider } from "./components/refine-ui/theme/theme-provider";
 import { dataProvider } from "./providers/data";
-import Dashboard from "@/pages/dashboard.tsx";
-import {BookOpen, GraduationCap, Home} from "lucide-react";
-import {Layout} from "@/components/refine-ui/layout/layout.tsx";
-import SubjectsList from "@/pages/subjects/list.tsx";
-import SubjectsCreate from "@/pages/subjects/create.tsx";
-import ClassesCreate from "@/pages/classes/create.tsx";
-import ClassesList from "@/pages/classes/list.tsx";
-import ClassesShow from "@/pages/classes/show.tsx";
+import Dashboard from "@/pages/dashboard";
+import SubjectsList from "@/pages/subjects/list";
+import SubjectsCreate from "@/pages/subjects/create";
+import DepartmentsList from "@/pages/departments/list";
+import DepartmentsCreate from "@/pages/departments/create";
+import UsersList from "@/pages/users/list";
+import UsersCreate from "@/pages/users/create";
+import ClassesCreate from "@/pages/classes/create";
+import ClassesList from "@/pages/classes/list";
+import ClassesShow from "@/pages/classes/show";
+import {BookOpen, GraduationCap, Home, Landmark, Users} from "lucide-react";
+import {Layout} from "@/components/refine-ui/layout/layout";
 
 function App() {
   return (
@@ -49,6 +53,18 @@ function App() {
                       meta: {label: "Subjects", icon: <BookOpen />}
                   },
                   {
+                      name: "departments",
+                      list: "/departments",
+                      create: "/departments/create",
+                      meta: {label: "Departments", icon: <Landmark />}
+                  },
+                  {
+                      name: "users",
+                      list: "/users",
+                      create: "/users/create",
+                      meta: {label: "Users", icon: <Users />}
+                  },
+                  {
                       name: "classes",
                       list: "/classes",
                       create: "/classes/create",
@@ -68,6 +84,16 @@ function App() {
                          <Route path="subjects">
                          <Route index element={<SubjectsList/>} />
                              <Route path="create" element={<SubjectsCreate/>} />
+                         </Route>
+
+                         <Route path="departments">
+                             <Route index element={<DepartmentsList/>} />
+                             <Route path="create" element={<DepartmentsCreate/>} />
+                         </Route>
+
+                         <Route path="users">
+                             <Route index element={<UsersList/>} />
+                             <Route path="create" element={<UsersCreate/>} />
                          </Route>
 
                       <Route path="classes">
