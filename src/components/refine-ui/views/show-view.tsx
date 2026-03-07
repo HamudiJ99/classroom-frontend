@@ -13,7 +13,7 @@ import {
   useUserFriendlyName,
 } from "@refinedev/core";
 import { ArrowLeftIcon } from "lucide-react";
-import { EditButton } from "../buttons/edit";
+import { EditButton } from "../buttons/edit.tsx";
 
 type ShowViewProps = PropsWithChildren<{
   className?: string;

@@ -778,7 +778,12 @@ const CRUD_OPERATOR_LABELS: Record<
   { i18nKey: string; defaultLabel: string }
 > = {
   eq: { i18nKey: "table.filter.operator.eq", defaultLabel: "Equals" },
+  eqs: { i18nKey: "table.filter.operator.eqs", defaultLabel: "Equals (strict)" },
   ne: { i18nKey: "table.filter.operator.ne", defaultLabel: "Not equals" },
+  nes: {
+    i18nKey: "table.filter.operator.nes",
+    defaultLabel: "Not equals (strict)",
+  },
   lt: { i18nKey: "table.filter.operator.lt", defaultLabel: "Less than" },
   gt: { i18nKey: "table.filter.operator.gt", defaultLabel: "Greater than" },
   lte: {
@@ -865,14 +870,6 @@ const CRUD_OPERATOR_LABELS: Record<
   nendswiths: {
     i18nKey: "table.filter.operator.nendswiths",
     defaultLabel: "Not ends with (case sensitive)",
-  },
-  eqs: {
-    i18nKey: "table.filter.operator.eqs",
-    defaultLabel: "Equals (case sensitive)",
-  },
-  nes: {
-    i18nKey: "table.filter.operator.nes",
-    defaultLabel: "Not equals (case sensitive)",
   },
 };
 
